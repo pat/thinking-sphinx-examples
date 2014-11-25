@@ -38,3 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'mysql2',          '~> 0.3.16'
+gem 'thinking-sphinx', '~> 3.1.2'
