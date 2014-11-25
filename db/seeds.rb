@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Article.create(
+  :subject => 'TDD is not dead', :content => 'DHH was wrong'
+).update_column :created_at, 2.weeks.ago
+
+Article.create(
+  :subject => 'Ruby is getting faster', :content => 'Thank you Matz and co.'
+).update_column :created_at, 5.days.ago
+
+Article.create(
+  :subject => 'RubyConf AU is going to rock', :content => 'Yes I am biased'
+).update_column :created_at, 1.day.ago
