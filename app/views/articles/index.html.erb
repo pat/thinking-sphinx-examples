@@ -1,0 +1,57 @@
+<h1>Articles</h1>
+
+<%= form_tag :articles, :method => :get do %>
+  <fieldset>
+    <label for="query">Search:</label>
+    <%= text_field_tag 'query', params[:query] %>
+  </fieldset>
+  <fieldset>
+    <%= submit_tag 'Search' %>
+  </fieldset>
+<% end %>
+
+<%= form_tag :articles, :method => :get do %>
+  <h2>Advanced Search</h2>
+  <fieldset>
+    <p>
+      <label for="subject">Subject:</label>
+      <%= text_field_tag 'subject', params[:subject] %>
+    </p>
+    <p>
+      <label for="content">Content:</label>
+      <%= text_field_tag 'content', params[:content] %>
+    </p>
+    <p>
+      <label for="within">Within:</label>
+      <select id="within" name="within">
+        <%= options_for_select ['All time', '1 week', '3 days'], params[:within] %>
+      </select>
+    </p>
+    <p>
+      <label for="sort_by">Sort by:</label>
+      <select id="sort_by" name="sort_by">
+        <%= options_for_select ['Relevance', 'Subject', 'Date'], params[:sort_by] %>
+      </select>
+    </p>
+  </fieldset>
+  <fieldset>
+    <%= submit_tag 'Advanced Search' %>
+  </fieldset>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.subject %></td>
+        <td><%= article.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
