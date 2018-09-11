@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '~> 4.2'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,5 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'mysql2',          '~> 0.3.16'
-gem 'thinking-sphinx', '~> 3.1.2'
+gem 'mysql2',          '~> 0.4.10'
+gem 'thinking-sphinx', '~> 3.1'
